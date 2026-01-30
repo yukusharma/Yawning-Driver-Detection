@@ -1,0 +1,102 @@
+Yawning Driver Detection using CNN + SVM
+This project implements a driver drowsiness and yawning detection system using a hybrid approach combining Convolutional Neural Networks (CNN) for feature extraction and Support Vector Machine (SVM) for final classification.
+The model classifies driver facial images into four categories:
+•	Closed (eyes closed)
+•	Open (eyes open)
+•	yawn
+•	no_yawn
+________________________________________
+📌 Project Overview
+Driver drowsiness is a major cause of road accidents. This project aims to detect signs of fatigue by analyzing facial images using deep learning and machine learning techniques.
+Key Highlights
+•	CNN used for automatic feature extraction
+•	SVM used for robust multi-class classification
+•	Image preprocessing using OpenCV
+•	Performance evaluation using accuracy and confusion matrix
+•	Visualization using Matplotlib & Seaborn
+________________________________________
+📁 Dataset Structure
+The dataset should be organized as follows:
+Yawning Driver Detection/
+│
+├── dataset_new/
+│   └── train/
+│       ├── Closed/
+│       ├── Open/
+│       ├── yawn/
+│       └── no_yawn/
+Each folder contains facial images corresponding to its class.
+________________________________________
+🛠️ Technologies Used
+•	Python
+•	OpenCV
+•	NumPy
+•	TensorFlow / Keras
+•	Scikit-learn
+•	Matplotlib
+•	Seaborn
+________________________________________
+⚙️ Preprocessing Steps
+•	Images resized to 64 × 64
+•	Pixel values normalized to [0, 1]
+•	Labels encoded into numerical and one-hot formats
+•	Dataset split into 80% training and 20% testing
+________________________________________
+🧠 Model Architecture
+CNN Architecture
+•	Conv2D (32 filters) + MaxPooling
+•	Conv2D (64 filters) + MaxPooling
+•	Conv2D (128 filters) + MaxPooling
+•	Flatten layer
+•	Dense layer (128 neurons, ReLU)
+•	Dropout (0.5)
+•	Output layer (4 classes, Softmax)
+Classification
+•	CNN used as a feature extractor
+•	Extracted features fed into an SVM classifier
+________________________________________
+🚀 Training
+•	Optimizer: Adam
+•	Loss Function: Categorical Crossentropy
+•	Epochs: 15
+•	Batch Size: 32
+________________________________________
+📊 Evaluation Metrics
+•	Training Accuracy
+•	Testing Accuracy
+•	Overall Accuracy
+•	Confusion Matrix Visualization
+________________________________________
+📈 Visualizations
+•	True labels vs predicted labels plot
+•	Feature visualization from CNN
+•	Confusion matrix using Seaborn heatmap
+•	Sample test image prediction display
+________________________________________
+🧪 Testing on a Single Image
+The system supports prediction on a single image by:
+1.	Loading the image
+2.	Preprocessing it
+3.	Extracting CNN features
+4.	Predicting the class using SVM
+Example test image path:
+Yawning Driver Detection/dataset_new/train/no_yawn/8.jpg
+________________________________________
+✅ Output Classes
+Label ID	Class Name
+0	Closed
+1	Open
+2	yawn
+3	no_yawn
+________________________________________
+📌 Future Improvements
+•	Real-time detection using webcam
+•	Face and eye region detection
+•	Larger and more diverse datasets
+•	Model optimization for deployment
+•	Integration with alert systems
+________________________________________
+👤 Author
+Yukta
+Driver Drowsiness & Yawning Detection Project
+

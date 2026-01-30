@@ -28,20 +28,24 @@ def load_dataset():
     # Load drowsy samples
     for filename in os.listdir(closed_dir):
         image = cv2.imread(os.path.join(closed_dir, filename))
-        dataset.append((image, 'Closed'))  # Assign label 'Drowsy' for drowsy samples
-    
+        if image is not None:
+            dataset.append((image, 'Closed'))  # Assign label 'Closed' for closed samples
+
     # Load non-drowsy samples
     for filename in os.listdir(open_dir):
         image = cv2.imread(os.path.join(open_dir, filename))
-        dataset.append((image, 'Open'))  # Assign label 'Not Drowsy' for non-drowsy samples
+        if image is not None:
+            dataset.append((image, 'Open'))  # Assign label 'Not Drowsy' for non-drowsy samples
 
     for filename in os.listdir(yawn_dir):
         image = cv2.imread(os.path.join(yawn_dir, filename))
-        dataset.append((image, 'yawn'))  # Assign label 'Drowsy' for drowsy samples
+        if image is not None:
+            dataset.append((image, 'yawn'))  # Assign label 'yawn' for yawn samples
 
     for filename in os.listdir(no_yawn_dir):
         image = cv2.imread(os.path.join(no_yawn_dir, filename))
-        dataset.append((image, 'no_yawn'))  # Assign label 'Drowsy' for drowsy samples
+        if image is not None:
+            dataset.append((image, 'no_yawn'))  # Assign label 'no_yawn' for no_yawn samples
     return dataset
 
 # Preprocessing function
